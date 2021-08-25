@@ -6,12 +6,21 @@ import PageTitle from '@/components/PageTitle';
 
 describe('LoadingView', () => {
   it('should render with page title', () => {
-    const wrapper = shallow(<MainLayout />);
-    wrapper.find(PageTitle).exists().should.be.true();
+    shallow(<MainLayout />)
+      .find(PageTitle)
+      .exists()
+      .should.be.true();
+
+    shallow(<MainLayout title="Foo" />)
+      .find(PageTitle)
+      .prop('title')
+      .should.equal('Foo');
   });
 
   it('should render with children wrapped in AntdLayout', () => {
-    const wrapper = shallow(<MainLayout />);
-    wrapper.find(AntdLayout).exists().should.be.true();
+    shallow(<MainLayout />)
+      .find(AntdLayout)
+      .exists()
+      .should.be.true();
   });
 });

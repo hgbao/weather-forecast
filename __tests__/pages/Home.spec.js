@@ -11,7 +11,9 @@ describe('Home', () => {
   });
 
   it('should render with correct page title', () => {
-    const wrapper = shallow(<Home />);
-    wrapper.find(MainLayout).prop('title').should.equal('Home');
+    shallow(<Home />)
+      .find(MainLayout)
+      .prop('title')
+      .should.equal('Home');
   });
 });
