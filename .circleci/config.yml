@@ -1,0 +1,60 @@
+version: 2.1
+
+aliases:
+  - &build_args
+    docker:
+      - image: circleci/node:16.3.0
+  - &common_args
+    pre-steps:
+      - checkout
+
+jobs:
+  # Build and test application
+  build-app:
+    <<: *build_args
+    steps:
+      # Install dependencies and run test
+      - restore_cache:
+          name: Restore yarn package cache
+          keys:
+            - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-main-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install yarn packages
+          command: yarn install
+      - save_cache:
+          name: Save yarn package cache
+          key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+            - node_modules
+      - run:
+          name: Run linter
+          command: yarn lint
+      - run:
+          name: Run depcheck
+          command: yarn depcheck
+      - run:
+          name: Run test
+          command: yarn test
+      # Build
+      - restore_cache:
+          name: Restore NextJS build cache
+          keys:
+            - nextjs-build-{{ .Branch }}
+            - nextjs-build-main
+      - run:
+          name: Build application
+          command: yarn build
+      - save_cache:
+          name: Save NextJS build cache
+          key: nextjs-build-{{ .Branch }}
+          paths:
+            - .next/cache
+
+workflows:
+  tasks:
+    jobs:
+      # Build and test application
+      - build-app:
+          <<: *common_args
