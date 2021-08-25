@@ -5,7 +5,10 @@ import PageTitle from '@/components/PageTitle';
 
 describe('LoadingView', () => {
   it('should render with correct page title', () => {
-    const wrapper = shallow(<PageTitle title="Foo" />);
-    wrapper.find(Head).find('title').text().should.equal('WeatherForecast - Foo');
+    shallow(<PageTitle title="Foo" />)
+      .find(Head)
+      .find('title')
+      .text()
+      .should.equal('WeatherForecast - Foo');
   });
 });
