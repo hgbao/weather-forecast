@@ -16,7 +16,11 @@
    yarn install
    ```
 
-2. Setup repository
+2. Setup environment variables
+
+   - Copy `.env.sample` to `.env.local`
+
+3. Setup repository
 
    ```bash
    yarn setup
