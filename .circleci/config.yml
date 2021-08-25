@@ -34,6 +34,9 @@ jobs:
       - run:
           name: Run depcheck
           command: yarn depcheck
+      - run:
+          name: Run test
+          command: yarn test
       # Build
       - restore_cache:
           name: Restore NextJS build cache
