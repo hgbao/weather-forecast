@@ -1,14 +1,18 @@
 import { BookOutlined } from '@ant-design/icons';
 import { Typography } from 'antd';
 
-export default function Home() {
+import MainLayout from '@/components/MainLayout';
+
+const Home = () => {
   return (
-    <div>
-      <Typography.Title>
+    <MainLayout title="Home">
+      <Typography.Title level={3}>
         <BookOutlined />
         Weather Forecast
       </Typography.Title>
       <Typography.Paragraph>Hello world</Typography.Paragraph>
-    </div>
+    </MainLayout>
   );
-}
+};
+
+export default Home;
