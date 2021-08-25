@@ -1,3 +1,7 @@
 {
-  "ignorePath": ".gitignore"
+  "ignorePath": ".gitignore",
+  "ignores": [
+    "@public/*",
+    "stylelint*"
+  ]
 }
