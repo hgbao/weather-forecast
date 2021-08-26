@@ -13,7 +13,10 @@
     "prettier": "prettier --ignore-path .gitignore \"**/*.{html,json,xml,yml,md}\" -c",
     "stylelint": "stylelint --ignore-path .gitignore \"**/*.{css,scss,sass,less}\"",
     "format": "yarn eslint --fix && yarn prettier --write && yarn stylelint --fix",
-    "depcheck": "depcheck ."
+    "depcheck": "depcheck .",
+    "predocker:prod": "yarn build",
+    "docker:dev": "docker build -t weather-forecast-dev -f .docker/dev.Dockerfile . && docker run -d -p 80:3000 --name weather-forecast-dev weather-forecast-dev",
+    "docker:prod": "docker build -t weather-forecast -f .docker/prod.Dockerfile . && docker run -d -p 80:3000 --name weather-forecast weather-forecast"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.3",
