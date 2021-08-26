@@ -21,7 +21,7 @@ jest.config.js
 test.setup.js
 
 # Environment variables
-.env*
+# .env*
 
 # Logs
 *.log
