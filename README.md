@@ -36,6 +36,8 @@
 yarn dev
 ```
 
+- The application will start on port `3000`
+
 ### Linter
 
 - Check linter issues:
@@ -55,3 +57,19 @@ yarn dev
   ```bash
   yarn depcheck
   ```
+
+### Test
+
+```bash
+yarn test
+```
+
+### Simulate server environment
+
+1. Start docker service
+2. Run the command based on your OS
+   | UNIX | Other |
+   |---|---|
+   | `yarn docker:prod ` | `yarn docker:dev ` |
+
+**Note:** The application will start on port `80` instead of `4000`
