@@ -22,7 +22,9 @@ exports[`Home should match snapshot 1`] = `
     </Col>
     <Col
       span={24}
-    />
+    >
+      <Empty />
+    </Col>
   </Row>
 </MainLayout>
 `;
