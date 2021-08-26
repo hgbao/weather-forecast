@@ -1,0 +1,35 @@
+# Library config files
+.git
+.gitignore
+.husky
+
+.circleci
+
+.eslintrc
+.prettierrc
+.stylelintrc
+.depcheckrc
+
+# .babelrc
+# jsconfig.json
+
+# Test files
+__mocks__/
+__tests__/
+coverage
+jest.config.js
+test.setup.js
+
+# Environment variables
+.env*
+
+# Logs
+*.log
+
+# Other files
+.vscode
+README.md
+scripts
+
+# src
+node_modules
