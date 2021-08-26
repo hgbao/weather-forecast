@@ -31,5 +31,5 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
-  setupTestFrameworkScriptFile: '<rootDir>/test.setup.js',
+  setupFilesAfterEnv: ['<rootDir>/test.setup.js'],
 };

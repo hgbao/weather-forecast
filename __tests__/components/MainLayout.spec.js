@@ -4,21 +4,15 @@ import { shallow } from 'enzyme';
 import MainLayout from '@/components/MainLayout';
 import PageTitle from '@/components/PageTitle';
 
-describe('LoadingView', () => {
+describe('MainLayout', () => {
   it('should render with page title', () => {
-    shallow(<MainLayout />)
-      .find(PageTitle)
-      .exists()
-      .should.be.true();
-
-    shallow(<MainLayout title="Foo" />)
-      .find(PageTitle)
-      .prop('title')
-      .should.equal('Foo');
+    const wrapper = shallow(<MainLayout title="Foo">Bar</MainLayout>);
+    wrapper.find(PageTitle).exists().should.be.true();
+    wrapper.find(PageTitle).prop('title').should.equal('Foo');
   });
 
   it('should render with children wrapped in AntdLayout', () => {
-    shallow(<MainLayout />)
+    shallow(<MainLayout title="Foo">Bar</MainLayout>)
       .find(AntdLayout)
       .exists()
       .should.be.true();

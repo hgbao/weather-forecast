@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import PageTitle from '@/components/PageTitle';
 
-describe('LoadingView', () => {
+describe('PageTitle', () => {
   it('should render with correct page title', () => {
     shallow(<PageTitle title="Foo" />)
       .find(Head)
