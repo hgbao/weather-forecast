@@ -4,14 +4,25 @@ exports[`Home should match snapshot 1`] = `
 <MainLayout
   title="Home"
 >
-  <Title
-    level={3}
+  <Row
+    gutter={
+      Array [
+        16,
+        16,
+      ]
+    }
   >
-    <ForwardRef(BookOutlined) />
-    Weather Forecast
-  </Title>
-  <Paragraph>
-    Hello world
-  </Paragraph>
+    <Col
+      span={24}
+    >
+      <RequestSearchBar
+        onOptionsRequest={[Function]}
+        onSelect={[Function]}
+      />
+    </Col>
+    <Col
+      span={24}
+    />
+  </Row>
 </MainLayout>
 `;

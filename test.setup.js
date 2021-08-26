@@ -1,5 +1,6 @@
 import 'should';
 import 'should-sinon';
+import 'jsdom-global/register';
 
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme from 'enzyme';

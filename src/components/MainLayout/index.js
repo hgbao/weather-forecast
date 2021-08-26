@@ -1,4 +1,5 @@
 import { Layout as AntdLayout } from 'antd';
+import PropTypes from 'prop-types';
 
 import PageTitle from '@/components/PageTitle';
 
@@ -14,6 +15,11 @@ const MainLayout = ({ children, title }) => {
       </AntdLayout>
     </AntdLayout>
   );
+};
+
+MainLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default MainLayout;

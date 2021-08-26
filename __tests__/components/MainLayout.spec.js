@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import MainLayout from '@/components/MainLayout';
 import PageTitle from '@/components/PageTitle';
 
-describe('LoadingView', () => {
+describe('MainLayout', () => {
   it('should render with page title', () => {
     shallow(<MainLayout />)
       .find(PageTitle)
