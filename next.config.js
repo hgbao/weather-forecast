@@ -5,13 +5,6 @@ const plugins = [
   [
     withAntdLess({
       lessVarsFilePath: './src/styles/variables.less',
-      cssLoaderOptions: {
-        esModule: false,
-        sourceMap: false,
-        modules: {
-          mode: 'local',
-        },
-      },
     }),
   ],
 ];
